@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1j69IihGJV1sjHlI2HJHck47vnc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs" />
+      <recent name="C:\xampp\htdocs\uebungen" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs" />
+      <recent name="C:\xampp\htdocs\include" />
+      <recent name="C:\xampp\htdocs\pageElements" />
+      <recent name="C:\xampp\htdocs\uebungen" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="" />
+      <created>1603113598573</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603113598573</updated>
+      <workItem from="1603113600021" duration="2054000" />
+      <workItem from="1603175519339" duration="3834000" />
+      <workItem from="1603179515790" duration="6287000" />
+      <workItem from="1603262534809" duration="8579000" />
+      <workItem from="1603348734863" duration="11149000" />
+      <workItem from="1603370073907" duration="2836000" />
+      <workItem from="1603444088090" duration="6040000" />
+      <workItem from="1603704879073" duration="4750000" />
+      <workItem from="1603784196071" duration="6178000" />
+      <workItem from="1603870968749" duration="7521000" />
+      <workItem from="1603916961293" duration="235000" />
+      <workItem from="1603961961122" duration="2094000" />
+      <workItem from="1604043386963" duration="12452000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="678" y="252" key="#CLI_Interpreters" timestamp="1603194412565">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="678" y="252" key="#CLI_Interpreters/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603194412565" />
+    <state x="805" y="240" key="#PHP" timestamp="1603194413640">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="805" y="240" key="#PHP/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603194413640" />
+    <state x="552" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603894878232">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="552" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603894878232" />
+    <state x="878" y="339" key="FileChooserDialogImpl" timestamp="1603455446374">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="878" y="339" key="FileChooserDialogImpl/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603455446374" />
+    <state x="606" y="242" key="SettingsEditor" timestamp="1603283828388">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="606" y="242" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603283828388" />
+    <state x="-1790" y="1080" width="1806" height="1127" maximized="true" key="dock-window-1" timestamp="1603370389591">
+      <screen x="-1920" y="1080" width="1920" height="1040" />
+    </state>
+    <state x="-1790" y="1080" width="1806" height="1127" maximized="true" key="dock-window-1/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603370389591" />
+  </component>
+</project>
