@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="" />
+    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/_default.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/_sql/benutzerverwatlung.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/css/debug.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/css/images/avatar_dummy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/include/config.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/include/dateTime.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/include/db.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/include/db_plus.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/include/form.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benutzerverwaltung/registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +25,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1j69IihGJV1sjHlI2HJHck47vnc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,19 +38,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/benutzerverwaltung" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs" />
-      <recent name="C:\xampp\htdocs\uebungen" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\benutzerverwaltung\_sql" />
+      <recent name="C:\xampp\htdocs\benutzerverwaltung\css\images" />
+      <recent name="C:\xampp\htdocs\benutzerverwaltung\css" />
       <recent name="C:\xampp\htdocs" />
       <recent name="C:\xampp\htdocs\include" />
-      <recent name="C:\xampp\htdocs\pageElements" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\benutzerverwaltung" />
+      <recent name="C:\xampp\htdocs" />
       <recent name="C:\xampp\htdocs\uebungen" />
     </key>
   </component>
@@ -56,11 +77,24 @@
       <workItem from="1603916961293" duration="235000" />
       <workItem from="1603961961122" duration="2094000" />
       <workItem from="1604043386963" duration="12452000" />
+      <workItem from="1604302746843" duration="12001000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1604302934940</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604302934940</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="678" y="252" key="#CLI_Interpreters" timestamp="1603194412565">
@@ -75,14 +109,18 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="552" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603894878232" />
-    <state x="878" y="339" key="FileChooserDialogImpl" timestamp="1603455446374">
+    <state x="878" y="339" key="FileChooserDialogImpl" timestamp="1604302886467">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="878" y="339" key="FileChooserDialogImpl/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603455446374" />
-    <state x="606" y="242" key="SettingsEditor" timestamp="1603283828388">
+    <state x="878" y="339" key="FileChooserDialogImpl/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604302886467" />
+    <state x="606" y="242" key="SettingsEditor" timestamp="1604320003074">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="606" y="242" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603283828388" />
+    <state x="606" y="242" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604320003074" />
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604303014448">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604303014448" />
     <state x="-1790" y="1080" width="1806" height="1127" maximized="true" key="dock-window-1" timestamp="1603370389591">
       <screen x="-1920" y="1080" width="1920" height="1040" />
     </state>
