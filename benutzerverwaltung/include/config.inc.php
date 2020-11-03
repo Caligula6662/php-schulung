@@ -3,7 +3,7 @@
 	#************ DB ************#
 	define("DB_SYSTEM", "mysql"); // Treiber
 	define("DB_HOST", "localhost"); // URL des Servers
-	define("DB_NAME", "market"); // Tabelle auswählen - falls nur 1 vorhanden
+	define("DB_NAME", "benutzerverwatlung"); // Tabelle auswählen - falls nur 1 vorhanden
 	define("DB_USER", "root"); // Username
 	define("DB_PWD", "");
 
