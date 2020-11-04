@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Anmeldeform erster Teil">
+    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Anmeldeform zweiter Teil">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/benutzerverwaltung/include/config.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/include/config.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/benutzerverwaltung/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/index.php" afterDir="false" />
@@ -68,7 +86,7 @@
       <workItem from="1603961961122" duration="2094000" />
       <workItem from="1604043386963" duration="12452000" />
       <workItem from="1604302746843" duration="12139000" />
-      <workItem from="1604388791836" duration="19448000" />
+      <workItem from="1604388791836" duration="19476000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1604302934940</created>
@@ -84,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604350337365</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Anmeldeform zweiter Teil">
+      <created>1604414547532</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604414547532</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,7 +129,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Anmeldeform erster Teil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anmeldeform erster Teil" />
+    <MESSAGE value="Anmeldeform zweiter Teil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anmeldeform zweiter Teil" />
   </component>
   <component name="WindowStateProjectService">
     <state x="678" y="252" key="#CLI_Interpreters" timestamp="1603194412565">
@@ -127,10 +153,10 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="606" y="242" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604320003074" />
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604350345177">
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604414520851">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604350345177" />
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604414520851" />
     <state x="-1790" y="1080" width="1806" height="1127" maximized="true" key="dock-window-1" timestamp="1603370389591">
       <screen x="-1920" y="1080" width="1920" height="1040" />
     </state>
