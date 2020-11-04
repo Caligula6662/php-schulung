@@ -27,7 +27,13 @@ if(DEBUG_F)		echo "<p class='debugCleanString'><b>Line " . __LINE__ .  "</b>: Au
 					// trim() entfernt am Anfang und am Ende eines Strings alle 
 					// sog. Whitespaces (Leerzeichen, Tabulatoren, Zeilenumbrüche)
 					$value = trim($value);
-					
+
+					// Damit cleanString() nicht NULL-Werte in Leerstings verändert, wird
+					// ein evetueller Leerstring in $value mit NULL überschrieben
+					if( $value === "" ) {
+						$value = NULL;
+					}
+
 					return $value;
 				}
 

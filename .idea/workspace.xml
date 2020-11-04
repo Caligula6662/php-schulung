@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Anmeldeform zweiter Teil">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/include/config.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/include/config.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/include/form.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/include/form.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/benutzerverwaltung/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +88,7 @@
       <workItem from="1604043386963" duration="12452000" />
       <workItem from="1604302746843" duration="12139000" />
       <workItem from="1604388791836" duration="19476000" />
+      <workItem from="1604475349862" duration="17612000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1604302934940</created>
@@ -109,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604414547532</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Anmeldeform zweiter Teil">
+      <created>1604475544865</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604475544865</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +134,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
@@ -153,13 +163,17 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="606" y="242" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604320003074" />
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604414520851">
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604475546434">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604414520851" />
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604475546434" />
     <state x="-1790" y="1080" width="1806" height="1127" maximized="true" key="dock-window-1" timestamp="1603370389591">
       <screen x="-1920" y="1080" width="1920" height="1040" />
     </state>
     <state x="-1790" y="1080" width="1806" height="1127" maximized="true" key="dock-window-1/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1603370389591" />
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1604479384491">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="760" y="264" width="672" height="678" key="search.everywhere.popup/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604479384491" />
   </component>
 </project>

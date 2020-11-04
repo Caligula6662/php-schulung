@@ -66,6 +66,10 @@
 
 			if(DEBUG)	echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Das Passwort entspricht den Mindestanforderungen <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
+			// WICHTIG: 'BUG' in PHP! Wenn $password 1234 lautet und $passwordCheck 01234
+			// erkennt der != Operator beide Werte als gleich! Daher unbedingt MIT Typprüfung !==
+			// vergleichen
+
 			if( $password !== $passwordCheck ) {
 
 				if(DEBUG)	echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: Passwörter stimmen nicht überein <i>(" . basename(__FILE__) . ")</i></p>\r\n";

@@ -199,6 +199,7 @@ popupBox a.button {
 }
 popupBox a.button:hover {
 	color: black;
+	cursor: pointer;
 }
 
 
