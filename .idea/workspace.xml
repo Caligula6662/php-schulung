@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Anmeldeform zweiter Teil">
+    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Anmeldeform dritter Teil - Passwort ändern">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/include/config.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/include/config.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/benutzerverwaltung/include/form.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/include/form.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/benutzerverwaltung/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +38,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1j69IihGJV1sjHlI2HJHck47vnc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
@@ -88,7 +91,8 @@
       <workItem from="1604043386963" duration="12452000" />
       <workItem from="1604302746843" duration="12139000" />
       <workItem from="1604388791836" duration="19476000" />
-      <workItem from="1604475349862" duration="17612000" />
+      <workItem from="1604475349862" duration="17839000" />
+      <workItem from="1604561634241" duration="18774000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1604302934940</created>
@@ -118,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604475544865</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Anmeldeform dritter Teil - Passwort ändern">
+      <created>1604498735836</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604498735836</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,10 +148,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Anmeldeform erster Teil" />
     <MESSAGE value="Anmeldeform zweiter Teil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anmeldeform zweiter Teil" />
+    <MESSAGE value="Anmeldeform dritter Teil - Passwort ändern" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
     <state x="678" y="252" key="#CLI_Interpreters" timestamp="1603194412565">
@@ -163,10 +176,10 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="606" y="242" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604320003074" />
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604475546434">
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604561657679">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604475546434" />
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604561657679" />
     <state x="-1790" y="1080" width="1806" height="1127" maximized="true" key="dock-window-1" timestamp="1603370389591">
       <screen x="-1920" y="1080" width="1920" height="1040" />
     </state>
