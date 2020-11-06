@@ -249,17 +249,7 @@
 
 							$dbMessage = "<h3 class='success'>Sie haben sich erfolgreich registriert und können sich nun einloggen.</h3>";
 
-
-							// Formularfelder leeren
-							$firstname 		= "";
-							$lastname 		= "";
-							$email 			= "";
-							$accountname 	= "";
-
 							$showForm = false;
-
-
-
 
 							// Bestätigungsmail generieren
 							// PHP-Funktion zum Erzeugen und Versenden einer Email:

@@ -49,35 +49,6 @@
 	$monthsArray = array("01" => "Januar", "02" => "Februar", "03" => "März", "04" => "April", "05" => "Mai", "06" => "Juni", "07" => "Juli", "08" => "August", "09" => "September", "10" => "Oktober", "11" => "November", "12" => "Dezember");
 
 
-	// Schritt 1 URL: Prüfen, ob URL-Parameter übergeben wurde
-
-	if (isset($_GET['action'])) {
-		if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'action' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
-
-		// Schritt 2 URL: Werte auslesen, entschärfen, DEBUG-Ausgabe
-
-		$action = cleanString($_GET['action']);
-
-		if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: \$action: $action <i>(" . basename(__FILE__) . ")</i></p>\r\n";
-
-		// Schritt 3 URL: i.d.R. Verzweigen
-
-		if ($action == "logout") {
-			if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: Im Zweig Logout gelandet  <i>(" . basename(__FILE__) . ")</i></p>\r\n";
-
-
-			// Schritt 4 URL Daten verarbeiten
-			//Leere Session löschen
-			session_destroy();
-			//Umleiten auf die index.php
-			header("Location: index.php");
-			exit;
-
-		}
-
-	}
-
-
 	// User- und Accountdaten von der Datenbank abholen
 
 	if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: Profildaten werden aus DB gelesen. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
@@ -147,6 +118,123 @@
 	// Daten aus Tabelle 'roles'
 	$roleId = $row['rol_id'];
 	$roleLabel = $row['rol_label'];
+
+	#**********************************************************************************#
+
+	#**********************************************************************************#
+
+
+	#********************************************#
+	#********** PROCESS URL PARAMETERS **********#
+	#********************************************#
+
+	// Schritt 1 URL: Prüfen, ob URL-Parameter übergeben wurden
+	if (isset($_GET['action'])) {
+		if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'action' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+		// Schritt 2 URL: Werte auslesen, entschärfen, DEBUG-Ausgabe
+		$action = cleanString($_GET['action']);
+		if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: \$action: $action <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+			// Schritt 3 URL: je nach Wert verzweigen
+
+
+		#********** LOGOUT **********#
+		if ($action == "logout") {
+			if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: Logout wird durchgeführt... <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+			// Schritt 4 URL: Daten weiterverarbeiten
+			session_destroy();
+			// Umleiten auf index.php
+			header("Location: index.php");
+			exit;
+
+		} elseif ($action == "deleteProfile") {
+
+			if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: Profildaten löschen... <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+			// Schritt 4 URL: Daten weiterverarbeiten
+
+			#********** DELETE PROFILE DATA **********#
+
+			#********** DELETE CONFIRMATION **********#
+
+			if( !isset($_GET["confirmed"])) {
+
+				$deleteCheckMessage = "<h3>Möchten Sie  Ihr Profil wirklich löschen?</h3>";
+				$deleteCheckMessage .= "<p><a href='?action=deleteProfile&confirmed' class='success'>ja wirklich</a> | <a href='profile.php' class='error'>nein doch nicht</a></p>";
+
+			} elseif( isset($_GET["confirmed"])) {
+
+				if(DEBUG)	echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Löschen wurde bestätigt <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+				#********** DB OPERATION **********#
+				$sql = "DELETE users, accounts FROM users
+					INNER JOIN accounts USING(usr_id)
+					WHERE acc_id = :ph_acc_id";
+
+				$params = array("ph_acc_id" => $acc_id);
+
+				// Schritt 2 DB: SQL-Statement vorbereiten
+				$statement = $pdo->prepare($sql);
+
+				// Schritt 3 DB: SQL-Statement ausführen und ggf. Platzhalter füllen
+				$statement->execute($params);
+				if (DEBUG) if ($statement->errorInfo()[2]) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: " . $statement->errorInfo()[2] . " <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+				// Schritt 4 DB: Daten weiterverarbeiten
+				// Bei schreibendem Zugriff: Schreiberfolg prüfen
+				$rowCount = $statement->rowCount();
+				if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: \$rowCount: $rowCount <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+				if ($rowCount != 2) {
+					// Fehlerfall
+					if (DEBUG) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: FEHLER beim Löschen der Profildaten! <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+					$dbMessage = "Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.";
+
+				} else {
+					// Erfolgsfall
+					if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Profildaten erfolgreich gelöscht. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+
+					#********** GGF. EIGENES AVATARBILD VOM SERVER LÖSCHEN **********#
+					// Überprüfen, dass das zu löschende Bild nicht der Avatar ist
+
+					if ($avatarpath != AVATAR_DUMMY_PATH) {
+						// Altes Bild vom Server löschen
+
+						if (!@unlink($avatarpath)) {
+							// Fehler
+							if (DEBUG) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>:Bild $avatarpath konnte nicht gelöscht werden. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+						} else {
+							// Erfolg
+							if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>:Bild $avatarpath wurde gelöscht. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+						}
+					}
+
+					#********** USER AUSLOGGEN **********#
+
+					if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: Logout wird durchgeführt... <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+					// Schritt 4 URL: Daten weiterverarbeiten
+					session_destroy();
+					// Umleiten auf index.php
+					header("Location: index.php?action=profileDeleted");
+					exit;
+
+					#********** BESTÄTIGUNGSMELDUNG **********#
+					// wird in Index ausgespielt
+
+
+				} // DELETE PROFILE DATA END
+
+			} // DELETE CONFIRMED
+
+		} // VERZWEIGUNG ENDE
+
+	} // PROCESS URL PARAMETERS END
+
 
 	#**********************************************************************************#
 
@@ -324,10 +412,10 @@
 
 					// Überprüfen, dass das zu löschende Bild nicht der Avatar ist
 
-					if ( $avatarpath != AVATAR_DUMMY_PATH) {
+					if ($avatarpath != AVATAR_DUMMY_PATH) {
 						// Altes Bild vom Server löschen
 
-						if ( !@unlink($avatarpath) ) {
+						if (!@unlink($avatarpath)) {
 							// Fehler
 							if (DEBUG) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>:Bild $avatarpath konnte nicht gelöscht werden. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
@@ -354,8 +442,6 @@
 				if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Das Formular ist insgesamt Fehlerfrei und wird jetzt verarbeitet. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 
-
-
 				// Schritt 4 FORM: Daten weiterverarbeiten
 				// Email überprüfen
 
@@ -364,7 +450,7 @@
 					FROM users 
 					WHERE usr_email = :ph_email
 					AND usr_id != :ph_usr_id
-			");
+				");
 
 				$statement->execute(array("ph_email" => $email, "ph_usr_id" => $usr_id));
 				if (DEBUG) if ($statement->errorInfo()[2]) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: " . $statement->errorInfo()[2] . " <i>(" . basename(__FILE__) . ")</i></p>\r\n";
@@ -485,6 +571,13 @@
 <!-- -------- PAGE HEADER -------- -->
 <header class="fright loginheader">
 	<p class="fright"><a href="?action=logout"><< Logout</a></p>
+	<br>
+
+	<!-- -------- LINK FOR PROFILE DELETE -------- -->
+	<hr>
+	<p><a href="?action=deleteProfile">Profil löschen</a></p>
+	<hr>
+	<!-- -------- LINK FOR PROFILE DELETE END -------- -->
 </header>
 <div class="clearer"></div>
 

@@ -53,8 +53,8 @@ if(DEBUG)	echo "<p class='debug'><b>Line " . __LINE__ . "</b>: Formulardaten wer
 
 				/********************************************/
 				/********** ERFOLGS-/FEHLERMELDUNG **********/
-				/********************************************/
 
+				/********************************************/
 				echo "<p>Debug-Ausgabe als Fehlermeldung:</p>";
 if(DEBUG)	echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: FEHLER: Inhalt der Fehlermeldung! <i>(" . basename(__FILE__) . ")</i></p>\r\n";				
 		

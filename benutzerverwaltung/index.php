@@ -5,15 +5,40 @@
 	require_once("include/db.inc.php");
 
 	$errorLogin = NULL;
-	$accountname = NULL;
+	$urlMessage = NULL;
+
+	/*$accountname = NULL;
 	$password = NULL;
 	$errorAccountname = NULL;
-	$errorPassword = NULL;
+	$errorPassword = NULL;*/
 
 	if(DEBUG)	echo "<pre class='debug'>Line <b>" . __LINE__ . "</b> <i>(" . basename(__FILE__) . ")</i>:<br>\r\n";
 	if(DEBUG)	print_r($_POST);
 	if(DEBUG)	echo "</pre>";
 
+
+
+	//URL-Parameter
+
+	if (isset($_GET['action'])) {
+		if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'action' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+		// Schritt 2 URL: Werte auslesen, entschärfen, DEBUG-Ausgabe
+		$action = cleanString($_GET['action']);
+		if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: \$action: $action <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+		// Schritt 3 URL: je nach Wert verzweigen
+
+		if ($action == "profileDeleted") {
+			if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: Meldung kann jetzt angezeigt werden. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+			//Schritt 4: Daten weiterverarbeiten
+			$urlMessage = "<h3 class='success'>Sie haben Ihr Profil erfolgreich gelöscht.<br>
+							Alle Ihre Daten wurden aus unserer Datenbank entfernt.</h3>
+							<p class='error'>Nur... warum?! Warum haben Sie uns verlassen?
+							Haben wir etwas falsch gemacht?</p>";
+		}
+	}
 
 
 	//Formularverarbeitung
@@ -203,7 +228,7 @@
 <hr>
 <!-- -------- PAGE HEADER END -------- -->
 <h1>Benutzerverwaltung - Startseite</h1>
-
+<?php if($urlMessage) echo $urlMessage ?>
 <p>
 	Hallo Besucher, bitte loggen Sie sich über obiges Formular ein, um die Inhalte für registrierte
 	Benutzer sehen zu können.<br>
