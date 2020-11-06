@@ -19,22 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Anmeldeform dritter Teil - Passwort ändern">
-      <change afterPath="$PROJECT_DIR$/_generatePasswordHash.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/_sql/blogs_initial.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/css/debug.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/dashboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/include/config.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/include/dateTime.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/include/db.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/include/form.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/index.php" afterDir="false" />
+    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Anmeldeform Ende&#10;Beginn Projekt Blog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vorlage_debugging_v.2.0.php" beforeDir="false" afterPath="$PROJECT_DIR$/vorlage_debugging_v.2.0.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/dashboard.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +92,7 @@
       <workItem from="1604388791836" duration="19476000" />
       <workItem from="1604475349862" duration="17839000" />
       <workItem from="1604561634241" duration="18833000" />
-      <workItem from="1604654005707" duration="21021000" />
+      <workItem from="1604654005707" duration="26970000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1604302934940</created>
@@ -149,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604588123620</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Anmeldeform Ende&#10;Beginn Projekt Blog">
+      <created>1604683827389</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604683827389</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +168,8 @@
     <MESSAGE value="Anmeldeform zweiter Teil" />
     <MESSAGE value="Anmeldeform dritter Teil - Passwort ändern" />
     <MESSAGE value="Datei Upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Datei Upload" />
+    <MESSAGE value="Anmeldeform Ende&#10;Beginn Projekt Blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anmeldeform Ende&#10;Beginn Projekt Blog" />
   </component>
   <component name="WindowStateProjectService">
     <state x="678" y="252" key="#CLI_Interpreters" timestamp="1603194412565">
@@ -201,10 +196,10 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="606" y="242" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604683002512" />
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604588134446">
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604683831780">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604588134446" />
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604683831780" />
     <state x="-1790" y="1080" width="1806" height="1127" maximized="true" key="dock-window-1" timestamp="1603370389591">
       <screen x="-1920" y="1080" width="1920" height="1040" />
     </state>
