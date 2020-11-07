@@ -197,9 +197,9 @@
 
 		$imageDataArray = getimagesize($fileTmp);
 
-		if(DEBUG)	echo "<pre class='debugImageUpload'>Line <b>" . __LINE__ . "</b> <i>(" . basename(__FILE__) . ")</i>:<br>\r\n";
-		if(DEBUG)	print_r($imageDataArray);
-		if(DEBUG)	echo "</pre>";
+		if(DEBUG_F)	echo "<pre class='debugImageUpload'>Line <b>" . __LINE__ . "</b> <i>(" . basename(__FILE__) . ")</i>:<br>\r\n";
+		if(DEBUG_F)	print_r($imageDataArray);
+		if(DEBUG_F)	echo "</pre>";
 
 		/*
 			Die Funktion getimagesize() liefert bei gültigen Bildern ein Array zurück:
@@ -238,7 +238,7 @@
 			$errorMessage = "Die Bildbreite darf maximal $imageMaxWidth px betragen!";
 		} elseif ( $fileSize > $imageMaxSize * 1024 ) {
 			// maximale Dateigröße
-			$errorMessage = "Die Dateigröße darf maximal" . round($imageMaxSize / 1024, 2) ."kb betragen!";
+			$errorMessage = "Die Dateigröße darf maximal " . round($imageMaxSize / 1024, 2) ."kb betragen!";
 		} else {
 			$errorMessage = NULL;
 		}

@@ -248,6 +248,11 @@
 		if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: Formular 'formsentProfileEdit' wurde abgeschickt. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 
+		if (DEBUG) echo "<pre class='debug'>Line <b>" . __LINE__ . "</b> <i>(" . basename(__FILE__) . ")</i>:<br>\r\n";
+		if (DEBUG) print_r($_POST);
+		if (DEBUG) echo "</pre>";
+
+
 		// Schritt 2 FORM: Werte auslesen, entschärfen, DEBUG-Ausgabe
 		$firstname = cleanString($_POST['firstname']);
 		$lastname = cleanString($_POST['lastname']);

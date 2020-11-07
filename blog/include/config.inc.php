@@ -15,14 +15,13 @@
 
 	#************ ImageUpload ************#
 	define("IMAGE_MAX_HEIGHT", 800);
-	define("IMAGE_MAX_WIDTH", 800);
-	define("IMAGE_MAX_SIZE", 128);
+	define("IMAGE_MAX_WIDTH", 1200);
+	define("IMAGE_MAX_SIZE", 512);
 	define("IMAGE_ALLOWED_MIMETYPES", array( "image/jpeg", "image/jpg", "image/gif", "image/png" ));
 
 
 	#************ Standard Pfade ************#
-	define("IMAGE_UPLOAD_PATH", "uploads/userimages/");
-	define("AVATAR_DUMMY_PATH", "css/images/avatar_dummy.png");
+	define("IMAGE_UPLOAD_PATH", "uploaded_images/");
 
 
 	#************ Debugging ************#

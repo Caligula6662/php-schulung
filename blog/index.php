@@ -1,5 +1,6 @@
 <?php
 
+
 	#**************************************#
 	#********** CONTINUE SESSION **********#
 	#**************************************#
@@ -14,6 +15,7 @@
 		session_destroy();
 	}
 
+
 	#************************************************#
 	#************* Includes und Imports *************#
 	#************************************************#
@@ -21,18 +23,22 @@
 	require_once("include/config.inc.php");
 	require_once("include/form.inc.php");
 	require_once("include/db.inc.php");
+	require_once("include/dateTime.inc.php");
+
 
 	#*************************************#
 	#************* Variablen *************#
 	#*************************************#
 
 	$errorLogin = NULL;
+	$categorieId = NULL;
+
 
 	#*********************************#
 	#************* Login *************#
 	#*********************************#
 
-	// Post Array prüfen
+	// Post Array für Login prüfen
 	if (isset($_POST["login"])) {
 
 		if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Postarray wurde gefunden und die Formularverarbeitung kann beginnen. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
@@ -135,7 +141,7 @@
 
 		} // ENDE Finale Validierung mit ggf. Rückmeldung an den User
 
-	} // ENDE Post Array prüfen
+	} // ENDE Post Array für Login prüfen
 
 
 	#****************************#
@@ -161,6 +167,51 @@
 
 	} // ENDE Prüfe, dass der Parameter Action in der URL vorhanden ist
 
+
+	#****************************************************#
+	#********** Vorhandene Kategorien ausgeben **********#
+	#****************************************************#
+
+	$categories = readTableFromDb("categories");
+
+
+
+	#********************************************#
+	#********** PROCESS URL PARAMETERS **********#
+	#********************************************#
+
+	// Parameter prüfen
+	if (isset($_GET['action'])) {
+
+		if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'action' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+		$action = cleanString($_GET['action']);
+		if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: \$action: $action <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+		// Verzweigung des ersten Parameter
+		if ( $action == "selectCategory" ) {
+
+			if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'action' mit 'selectCategory' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+			// Verzweigung des zweiten Parameter 'id'
+			if ( isset($_GET['id'])) {
+
+				if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'id' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+				$categorieId = cleanString($_GET['id']);
+
+			} // ENDE Verzweigung des zweiten Parameter 'id'
+
+		} // ENDE Verzweigung des ersten Parameter
+
+	} // ENDE Parameter prüfen
+
+
+	#***********************************************#
+	#********** Blogposts aus DB auslesen **********#
+	#***********************************************#
+
+	$blogPosts = getBlogPost($categorieId);
 
 ?>
 
@@ -200,6 +251,55 @@
 </header>
 <div class="clearer"></div>
 
-<h1>Willkommen!</h1>
+<h1>PHP Blog Projekt!</h1>
+<a href="index.php">Alle Einträge anzeigen</a>
+
+<div class="clearer"></div>
+
+<div class="fleft" style="width: 80%;">
+
+	<?php if (is_array($blogPosts)): ?>
+		<?php foreach ($blogPosts as $singlePost): ?>
+
+			<div class="blogpost">
+				<small>Kategorie: <?= $singlePost["cat_name"] ?></small>
+				<h3><?= $singlePost["blog_headline"] ?></h3>
+				<span class="info"><?= $singlePost["usr_firstname"] ?> <?= $singlePost["usr_lastname"] ?> (<?= $singlePost["usr_city"] ?>) schrieb am <?= isoToEuDateTime($singlePost["blog_date"])["date"] ?> um <?= isoToEuDateTime($singlePost["blog_date"])["time"] ?> Uhr:</span>
+
+				<div class="content">
+					<?php if ($singlePost["blog_imagePath"]): ?>
+						<div class="f<?= $singlePost["blog_imageAlignment"] ?>">
+							<img style="max-width: 200px;" src="<?= $singlePost["blog_imagePath"] ?>">
+						</div>
+					<?php endif; ?>
+					<p><?= nl2br($singlePost["blog_content"]) ?></p>
+					<div class="clearer"></div>
+				</div>
+
+			</div>
+		<?php endforeach; ?>
+	<?php endif; ?>
+
+</div>
+
+
+<div class="fright" style="width: 20%;">
+	<?php if (!is_array($categories)): ?>
+		<span class="error"><?= $categories ?></span>
+	<?php else: ?>
+		<ul class="categories">
+			<?php foreach ($categories as $categorieResults): ?>
+				<li>
+					<a href="?action=selectCategory&id=<?= $categorieResults["cat_id"] ?>"><?= $categorieResults["cat_name"] ?>
+				</li>
+			<?php endforeach; ?>
+		</ul><br>
+	<?php endif ?>
+</div>
+
+
+<div class="clearer"></div>
+
+
 </body>
 </html>
