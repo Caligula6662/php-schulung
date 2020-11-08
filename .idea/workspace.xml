@@ -20,20 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Projekt Blog erster Teil">
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/321690cbafed1604780477_06_-_waschbaer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/347710afedbc1604767173_04_-_katze.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/399776bcfade1604767194_03_-_wolf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/521746cebafd1604767034_04_-_katze.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/529834cdbfea1604768565_03_-_wolf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/740378fadebc1604768436_03_-_wolf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/805404decabf1604768475_03_-_wolf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/943229cefdba1604766872_04_-_katze.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benutzerverwaltung/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/benutzerverwaltung/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/include/config.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/include/config.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/include/db.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/include/db.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/include/form.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/include/form.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +96,8 @@
       <workItem from="1604475349862" duration="17839000" />
       <workItem from="1604561634241" duration="18833000" />
       <workItem from="1604654005707" duration="27052000" />
-      <workItem from="1604754726125" duration="20839000" />
+      <workItem from="1604754726125" duration="21473000" />
+      <workItem from="1604842041209" duration="5539000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1604302934940</created>
@@ -164,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604697286877</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Technisch fertiger Blog">
+      <created>1604780996853</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604780996853</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +189,8 @@
     <MESSAGE value="Datei Upload" />
     <MESSAGE value="Anmeldeform Ende&#10;Beginn Projekt Blog" />
     <MESSAGE value="Projekt Blog erster Teil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Projekt Blog erster Teil" />
+    <MESSAGE value="Technisch fertiger Blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Technisch fertiger Blog" />
   </component>
   <component name="WindowStateProjectService">
     <state x="678" y="252" key="#CLI_Interpreters" timestamp="1603194412565">
@@ -218,10 +217,10 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="606" y="242" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604683002512" />
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604697289744">
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604781003290">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604697289744" />
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604781003290" />
     <state x="-1877" y="1080" width="1829" height="1127" key="dock-window-1" timestamp="1604774727516">
       <screen x="-1920" y="1080" width="1920" height="1040" />
     </state>

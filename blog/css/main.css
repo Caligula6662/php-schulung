@@ -2,23 +2,157 @@
 /********** BASIC STYLES **********/
 /**********************************/
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: verdana;
 	font-size: 14px;
-	box-sizing: border-box;
+	margin:0;
+}
+
+.header {
+	background-color: #eee;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1440px;
+}
+
+.d-flex {
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.col-9 {
+	flex: 0 0 75%;
+	max-width: 75%;
+}
+.col-8 {
+	flex: 0 0 66.666667%;
+	max-width: 66.666667%;
+}
+.col-4 {
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
+}
+.col-3 {
+	flex: 0 0 25%;
+	max-width: 25%;
+}
+
+.image img {
+	max-width: 100%;
+}
+
+.image.right {
+	order: 2;
+}
+
+.image.right + p {
+	padding-right: 20px;
+}
+
+.image.left + p {
+	padding-left: 20px;
 }
 
 p.small { 
 	font-size: 0.7em; color: gray;
 }
 
+.content {
+	margin-right: 25px;
+}
+
+.hero {
+	margin: 50px 0;
+}
+
+a {
+	color: dodgerblue;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+.blogpost {
+	background-color: #eee;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 50px;
+}
+
+.blogpost-header h3 {
+	margin: 5px 0 15px 0;
+	text-transform: uppercase;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+.blogpost-header .info {
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
+.blogpost-content p {
+	margin-top: 0;
+}
+
+.sidebar-nav {
+	background-color: #eee;
+	padding: 20px;
+	border-radius: 5px;
+	margin-left: 25px;
+}
+
+.categories {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.categories li {
+	padding-left: 0;
+}
+
+.categories a {
+	color: #424242;
+	display: block;
+	text-decoration: none;
+	background-color: #ddd;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 5px;
+	transition: all .3s ease;
+}
+.categories a:hover {
+	background-color: #333333;
+	color: #ffffff;
+	transition: all .3s ease;
+}
+
+
 /******************************************/
 /********** HTML ELEMENTS STYLES **********/
 /******************************************/
 
 /********** COMMON FORMULAR STYLES **********/
+form {
+	margin-bottom: 0;
+}
+
 fieldset, input, textarea, select {
 	border-radius: 5px;
+	padding: 5px;
 }
 fieldset {
 	margin-bottom: 10px;
@@ -27,6 +161,11 @@ fieldset fieldset {
 	width: 78%;
 	border: 1px solid gray;
 }
+
+select {
+	width: 100%;
+}
+
 select.day {
 	width: 75px;
 }
@@ -39,7 +178,7 @@ select.year {
 input, textarea {
 	margin: 5px 0;
 	padding: 5px;
-	width: 80%;
+	width: 100%;
 }
 textarea {
 	height: 100px;
@@ -47,9 +186,11 @@ textarea {
 }
 input[type="submit"] {
 	width: 100%;
+	color: white;
+	background-color: dodgerblue;
 }
 input.short {
-	width: 125px;
+	width: 140px;
 }
 
 /********** TABLES **********/
@@ -124,7 +265,7 @@ img.avatar {
 	color: green;
 }
 .info {
-	color: darkorange;
+	color: dodgerblue;
 }
 .bg-error {
 	background-color: red;

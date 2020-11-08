@@ -175,7 +175,6 @@
 	$categories = readTableFromDb("categories");
 
 
-
 	#********************************************#
 	#********** PROCESS URL PARAMETERS **********#
 	#********************************************#
@@ -189,12 +188,12 @@
 		if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: \$action: $action <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 		// Verzweigung des ersten Parameter
-		if ( $action == "selectCategory" ) {
+		if ($action == "selectCategory") {
 
 			if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'action' mit 'selectCategory' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 			// Verzweigung des zweiten Parameter 'id'
-			if ( isset($_GET['id'])) {
+			if (isset($_GET['id'])) {
 
 				if (DEBUG) echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'id' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
@@ -228,7 +227,7 @@
 
 <body>
 
-<header class="fright loginheader">
+<header class="header container">
 
 	<?php if (!isset($_SESSION["usr_id"])): ?>
 		<form action="<?php echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
@@ -249,57 +248,65 @@
 	<?php endif ?>
 
 </header>
-<div class="clearer"></div>
 
-<h1>PHP Blog Projekt!</h1>
-<a href="index.php">Alle Einträge anzeigen</a>
+<div class="container">
 
-<div class="clearer"></div>
+	<div class="hero">
+		<h1>PHP Blog Projekt!</h1>
+		<a href="index.php">Alle Einträge anzeigen</a>
+	</div>
 
-<div class="fleft" style="width: 80%;">
+	<div class="d-flex">
+		<div class="col-9">
+			<div class="content">
+				<?php if (is_array($blogPosts)): ?>
+					<?php foreach ($blogPosts as $singlePost): ?>
 
-	<?php if (is_array($blogPosts)): ?>
-		<?php foreach ($blogPosts as $singlePost): ?>
+						<div class="blogpost">
+							<div class="blogpost-header">
+								<small>Kategorie: <?= $singlePost["cat_name"] ?></small>
+								<h3><?= $singlePost["blog_headline"] ?></h3>
+								<span class="info"><?= $singlePost["usr_firstname"] ?> <?= $singlePost["usr_lastname"] ?> (<?= $singlePost["usr_city"] ?>) schrieb am <?= isoToEuDateTime($singlePost["blog_date"])["date"] ?> um <?= isoToEuDateTime($singlePost["blog_date"])["time"] ?> Uhr:</span>
+							</div>
+							<div class="blogpost-content">
+								<div class="d-flex">
+									<?php if ($singlePost["blog_imagePath"]): ?>
+										<div class="col-4 image <?= $singlePost["blog_imageAlignment"] ?>">
+											<img src="<?= $singlePost["blog_imagePath"] ?>">
+										</div>
+										<p class="col-8"><?= nl2br($singlePost["blog_content"]) ?></p>
+									<?php else: ?>
+										<p><?= nl2br($singlePost["blog_content"]) ?></p>
+									<?php endif; ?>
 
-			<div class="blogpost">
-				<small>Kategorie: <?= $singlePost["cat_name"] ?></small>
-				<h3><?= $singlePost["blog_headline"] ?></h3>
-				<span class="info"><?= $singlePost["usr_firstname"] ?> <?= $singlePost["usr_lastname"] ?> (<?= $singlePost["usr_city"] ?>) schrieb am <?= isoToEuDateTime($singlePost["blog_date"])["date"] ?> um <?= isoToEuDateTime($singlePost["blog_date"])["time"] ?> Uhr:</span>
-
-				<div class="content">
-					<?php if ($singlePost["blog_imagePath"]): ?>
-						<div class="f<?= $singlePost["blog_imageAlignment"] ?>">
-							<img style="max-width: 200px;" src="<?= $singlePost["blog_imagePath"] ?>">
+								</div>
+							</div>
 						</div>
-					<?php endif; ?>
-					<p><?= nl2br($singlePost["blog_content"]) ?></p>
-					<div class="clearer"></div>
-				</div>
-
+					<?php endforeach; ?>
+				<?php endif; ?>
 			</div>
-		<?php endforeach; ?>
-	<?php endif; ?>
+		</div>
 
+
+		<div class="col-3" style="width: 20%;">
+			<div class="sidebar-nav">
+				<?php if (!is_array($categories)): ?>
+					<span class="error"><?= $categories ?></span>
+				<?php else: ?>
+					<ul class="categories">
+						<?php foreach ($categories as $categorieResults): ?>
+							<li>
+								<a href="?action=selectCategory&id=<?= $categorieResults["cat_id"] ?>"><?= $categorieResults["cat_name"] ?></a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif ?>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearer"></div>
 </div>
-
-
-<div class="fright" style="width: 20%;">
-	<?php if (!is_array($categories)): ?>
-		<span class="error"><?= $categories ?></span>
-	<?php else: ?>
-		<ul class="categories">
-			<?php foreach ($categories as $categorieResults): ?>
-				<li>
-					<a href="?action=selectCategory&id=<?= $categorieResults["cat_id"] ?>"><?= $categorieResults["cat_name"] ?>
-				</li>
-			<?php endforeach; ?>
-		</ul><br>
-	<?php endif ?>
-</div>
-
-
-<div class="clearer"></div>
-
 
 </body>
 </html>
