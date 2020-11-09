@@ -37,7 +37,7 @@
 
 	// Kategorie anlegen
 	$usrMsgCategory = NULL;
-	$categories = NULL;
+	$category = NULL;
 	$categoriesArray = NULL;
 
 	// BlogPost verfassen
@@ -165,8 +165,23 @@
 	#********** Vorhandene Kategorien ausgeben **********#
 	#****************************************************#
 
-	$categoriesArray = readTableFromDb("categories");
+	$statement = $pdo->prepare("SELECT * FROM categories");
+	$statement->execute();
+	if(DEBUG_F) if($statement->errorInfo()[2]) echo "<p class='debugCheckEmail'><b>Line " . __LINE__ . "</b>: " . $statement->errorInfo()[2] . " <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
+	$categoriesArray = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+	// Überprüfe dass Array aus der Datenbank
+	if ( !isset($categoriesArray)) {
+		// Fehler
+		if (DEBUG_F) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: Die Kategorien konnten nicht von der Datenbank geladen werden. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+		$categoriesArray = "Fehler beim lesen der Kategorien.";
+
+	} else {
+		// Erfolg
+		if (DEBUG_F) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Die Kategorien wurden erfolgreich von der Datenbank geladen. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
+	} // ENDE Überprüfe dass Array aus der Datenbank
 
 	#********************************************************#
 	#********** Blogbeitrag auslesen und speichern **********#
@@ -175,11 +190,11 @@
 	// Überprüfe dass PostArray für den BlogPost
 	if (isset($_POST["addBlogPost"])) {
 
-		if (DEBUG) echo "<pre class='debug'>Line <b>" . __LINE__ . "</b> <i>(" . basename(__FILE__) . ")</i>:<br>\r\n";
-		if (DEBUG) print_r($_POST);
-		if (DEBUG) echo "</pre>";
+//		if (DEBUG) echo "<pre class='debug'>Line <b>" . __LINE__ . "</b> <i>(" . basename(__FILE__) . ")</i>:<br>\r\n";
+//		if (DEBUG) print_r($_POST);
+//		if (DEBUG) echo "</pre>";
 
-		if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Der Post-Array <b>addBlog</b> wurde gefunden und die Verarbeitung kann beginnen. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+		if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Das Formular wurde abgesendet. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 		$cat_id = cleanString($_POST["cat_id"]);
 		$blog_headline = cleanString($_POST["blog_headline"]);
@@ -231,12 +246,12 @@
 				// Prüfen, ob es einen Bilduploadfehler gab und diesen ausgeben
 				if ($imageUploadReturnArray["imageError"]) {
 					// Fehler
-					if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>:$imageUploadReturnArray[imageError] <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+					if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>: $imageUploadReturnArray[imageError] <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 					$errorBlog_image = $imageUploadReturnArray["imageError"];
 
 				} else {
 					// Erfolg
-					if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>:Bild wurde erfolgreich unter $imageUploadReturnArray[imagePath] gespeichert <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+					if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Bild wurde erfolgreich unter $imageUploadReturnArray[imagePath] gespeichert <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 					// Neuen Bildpfad in Datenbank speichern
 					$blog_imagePath = $imageUploadReturnArray["imagePath"];
@@ -246,13 +261,13 @@
 			}// ENDE Prüfen, dass ein Upload vorliegt
 
 
-			// Finale überprüfung des Uploads
+			// Finale Überprüfung des Uploads
 			if ($errorBlog_image) {
 				// Fehler
-				if (DEBUG) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: Das Upload des Bildes war fehlerhaft. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+				if (DEBUG) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: Der Upload des Bildes war fehlerhaft. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 
-				// Wir können mit else fortfahren, weil die Variable $errorBlog_image NULL oder "" enthält und somit auch ohne Upload fortgefahren werden kann.
+			// Wir können mit else fortfahren, weil die Variable $errorBlog_image NULL oder "" enthält und somit auch ohne Upload fortgefahren werden kann.
 			} else {
 				// Erfolg
 
@@ -293,7 +308,8 @@
 				if (DEBUG) if ($statement->errorInfo()[2]) echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: " . $statement->errorInfo()[2] . " <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 				$rowCount = $statement->rowCount();
-				if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b>\$rowCount: $rowCount<i>(" . basename(__FILE__) . ")</i></p>\r\n";
+				if (DEBUG) echo "<p class='debug'><b>Line " . __LINE__ . "</b> \$rowCount: $rowCount<i>(" . basename(__FILE__) . ")</i></p>\r\n";
+
 
 				if (!$rowCount) {
 					// Fehler
@@ -301,8 +317,7 @@
 
 				} else {
 					// Erfolg
-
-					if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>Der Blogpost wurde erfolgreich in die Datenbank gespeichert.<i>(" . basename(__FILE__) . ")</i></p>\r\n";
+					if (DEBUG) echo "<p class='debug ok'><b>Line " . __LINE__ . "</b> Der Blogpost wurde erfolgreich in die Datenbank gespeichert.<i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 					// User benachrichtigen
 					$dbMessage = "<h3 class='success'>Der Blogpost wurde erfolgreich in die Datenbank gespeichert.</h3>";
@@ -317,7 +332,7 @@
 
 				}
 
-			}
+			} // ENDE Finale Überprüfung des Uploads
 
 		} // ENDE Finale Prüfung der Pflichteinfabefelder Blogpost
 
@@ -406,7 +421,7 @@
 							<div class="clearer"></div>
 
 							<span class="error"><?= $errorBlog_content ?></span>
-							<textarea name="blog_content"><?= $blog_content ?></textarea>
+							<textarea name="blog_content" placeholder="Hier ihren Text eingeben."><?= $blog_content ?></textarea>
 
 							<input type="submit" value="Veröffentlichen">
 						</fieldset>
@@ -424,7 +439,7 @@
 					<fieldset>
 						<input type="hidden" name="addCategory">
 						<?= $usrMsgCategory ?>
-						<input type="text" name="cat_name" placeholder="Name der Kategorie">
+						<input type="text" name="cat_name" placeholder="Name der Kategorie" value="<?= $category ?>">
 						<input type="submit" value="Neue Kategorie anlegen">
 					</fieldset>
 				</form>
