@@ -19,19 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Projekt Blog zweiter Teil Styling">
-      <change afterPath="$PROJECT_DIR$/blog/_sql/blog.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/33210adfecb1604909263_swiss_death.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/401549fdebac1604926890_avatar1.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/426627bdefca1604928560_avatar1.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/434628ecdfab1604928548_avatar1.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/495976fcbeda1604909448_07_-_eichhorn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/512482adcfeb1604909341_avatar1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/652284fbaedc1604909583_bla.jpg" afterDir="false" />
+    <list default="true" id="88309503-538d-40ec-a374-05ffd778ffb5" name="Default Changelist" comment="Projekt Blog dritter Teil Korrekturen">
+      <change afterPath="$PROJECT_DIR$/blog/uploaded_images/539766feadbc1604994547_cheaters.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/include/config.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/include/config.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/include/db.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/include/db.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +97,8 @@
       <workItem from="1604654005707" duration="27052000" />
       <workItem from="1604754726125" duration="21473000" />
       <workItem from="1604842041209" duration="5667000" />
-      <workItem from="1604907205694" duration="11549000" />
+      <workItem from="1604907205694" duration="11584000" />
+      <workItem from="1604993851324" duration="2107000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1604302934940</created>
@@ -178,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604849292732</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Projekt Blog dritter Teil Korrekturen">
+      <created>1604934377828</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604934377828</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +206,8 @@
     <MESSAGE value="Projekt Blog erster Teil" />
     <MESSAGE value="Technisch fertiger Blog" />
     <MESSAGE value="Projekt Blog zweiter Teil Styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Projekt Blog zweiter Teil Styling" />
+    <MESSAGE value="Projekt Blog dritter Teil Korrekturen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projekt Blog dritter Teil Korrekturen" />
   </component>
   <component name="WindowStateProjectService">
     <state x="678" y="252" key="#CLI_Interpreters" timestamp="1603194412565">
@@ -234,10 +234,10 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="291" y="157" key="SettingsEditor/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604907618245" />
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604849295905">
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2" timestamp="1604934380015">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604849295905" />
+    <state x="690" y="330" key="Vcs.Push.Dialog.v2/0.0.2194.1194/-1920.1080.1920.1040@0.0.2194.1194" timestamp="1604934380015" />
     <state x="-1877" y="1080" width="1829" height="1127" key="dock-window-1" timestamp="1604774727516">
       <screen x="-1920" y="1080" width="1920" height="1040" />
     </state>
