@@ -1,6 +1,10 @@
 <?php
 
 
+			require_once("models/blog.inc.php");
+			require_once("models/category.inc.php");
+			require_once("models/user.inc.php");
+
 			#**************************************#
 			#********** CONTINUE SESSION **********#
 			#**************************************#
@@ -150,8 +154,6 @@ if (DEBUG) 					echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Passwör
 			#********** Vorhandene Kategorien ausgeben **********#
 			#****************************************************#
 
-			//$categoriesArray = readTableFromDb($pdo, "categories");
-
 			$statement = $pdo->prepare("SELECT * FROM categories");
 			$statement->execute();
 if(DEBUG) 	if($statement->errorInfo()[2]) echo "<p class='debugCheckEmail'><b>Line " . __LINE__ . "</b>: " . $statement->errorInfo()[2] . " <i>(" . basename(__FILE__) . ")</i></p>\r\n";
@@ -227,8 +229,6 @@ if (DEBUG) 			echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Para
 			#********** Blogposts aus DB auslesen **********#
 			#***********************************************#
 
-
-
 			$postsArray = NULL;
 			$sql = "
 				SELECT * FROM `blogs`
@@ -260,6 +260,20 @@ if (DEBUG) 		echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: Die Artike
 if (DEBUG) 		echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Die Artikel wurden erfolgreich von der Datenbank geladen. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 			} // ENDE Überprüfe dass Array aus der Datenbank
+
+			#****************************************************#
+			#********** Blogposts in Objekte umwandeln **********#
+			#****************************************************#
+
+
+
+			foreach ($postsArray AS $posts) {
+
+
+
+			}
+
+
 
 
 ?>

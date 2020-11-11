@@ -166,19 +166,19 @@ if (DEBUG) 					echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Kategori
 
 			$statement = $pdo->prepare("SELECT * FROM categories");
 			$statement->execute();
-if(DEBUG) 	if($statement->errorInfo()[2]) echo "<p class='debugCheckEmail'><b>Line " . __LINE__ . "</b>: " . $statement->errorInfo()[2] . " <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+if(DEBUG_F) if($statement->errorInfo()[2]) echo "<p class='debugCheckEmail'><b>Line " . __LINE__ . "</b>: " . $statement->errorInfo()[2] . " <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 			$categoriesArray = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 			// Überprüfe dass Array aus der Datenbank
 			if ( !isset($categoriesArray)) {
 				// Fehler
-if (DEBUG) 		echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: Die Kategorien konnten nicht von der Datenbank geladen werden. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+if (DEBUG_F) 	echo "<p class='debug err'><b>Line " . __LINE__ . "</b>: Die Kategorien konnten nicht von der Datenbank geladen werden. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 				$categoriesArray = "Fehler beim lesen der Kategorien.";
 
 			} else {
 				// Erfolg
-if (DEBUG) 		echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Die Kategorien wurden erfolgreich von der Datenbank geladen. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
+if (DEBUG_F) 	echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Die Kategorien wurden erfolgreich von der Datenbank geladen. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 			} // ENDE Überprüfe dass Array aus der Datenbank
 
