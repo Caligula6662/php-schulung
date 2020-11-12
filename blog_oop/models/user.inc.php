@@ -1,6 +1,6 @@
 <?php
 
-	require_once "../include/form.inc.php";
+//	require_once "../include/form.inc.php";
 
 	class User{
 
@@ -11,28 +11,16 @@
 		private $usr_city;
 		private $usr_password;
 
-
-
 		/**
 		 * User constructor.
 		 * @param int $usr_id
-		 * @param string $usr_firstname
-		 * @param string $usr_lastname
-		 * @param string $usr_email
-		 * @param string $usr_city
-		 * @param string $usr_password
 		 */
-		public function __construct($usr_id, $usr_firstname, $usr_lastname, $usr_email, $usr_city, $usr_password)
+		public function __construct(
+			$usr_id
+		)
 		{
 			$this->usr_id = $usr_id;
-			$this->usr_firstname = $usr_firstname;
-			$this->usr_lastname = $usr_lastname;
-			$this->usr_email = $usr_email;
-			$this->usr_city = $usr_city;
-			$this->usr_password = $usr_password;
 		}
-
-
 
 		/**
 		 * @return int

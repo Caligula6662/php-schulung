@@ -1,6 +1,6 @@
 <?php
 
-	require_once("../include/form.inc.php");
+//	require_once("../include/form.inc.php");
 
 	class Category {
 

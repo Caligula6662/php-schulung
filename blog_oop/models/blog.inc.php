@@ -1,8 +1,8 @@
 <?php
 
-	require_once ("../include/form.inc.php");
-	require_once ("category.inc.php");
-	require_once ("user.inc.php");
+//	require_once ("../include/form.inc.php");
+//	require_once ("category.inc.php");
+//	require_once ("user.inc.php");
 
 
 	class Blog
@@ -23,8 +23,6 @@
 		 *
 		 * @param int $blog_id
 		 * @param string $blog_headline
-		 * @param string $blog_imagePath
-		 * @param string $blog_imageAlignment
 		 * @param string $blog_content
 		 * @param date $blog_date
 		 * @param Category $category
@@ -34,8 +32,6 @@
 		public function __construct(
 			$blog_id,
 			$blog_headline,
-			$blog_imagePath,
-			$blog_imageAlignment,
 			$blog_content,
 			$blog_date,
 			$category,
@@ -44,13 +40,10 @@
 		{
 			$this->blog_id = $blog_id;
 			$this->blog_headline = $blog_headline;
-			$this->blog_imagePath = $blog_imagePath;
-			$this->blog_imageAlignment = $blog_imageAlignment;
 			$this->blog_content = $blog_content;
 			$this->blog_date = $blog_date;
 			$this->category = $category;
 			$this->user = $user;
-
 		}
 
 		/**

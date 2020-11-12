@@ -1,6 +1,9 @@
 <?php
 
-
+			require_once("include/config.inc.php");
+			require_once("include/form.inc.php");
+			require_once("include/db.inc.php");
+			require_once("include/dateTime.inc.php");
 			require_once("models/blog.inc.php");
 			require_once("models/category.inc.php");
 			require_once("models/user.inc.php");
@@ -24,10 +27,7 @@
 			#************* Includes und Imports *************#
 			#************************************************#
 
-			require_once("include/config.inc.php");
-			require_once("include/form.inc.php");
-			require_once("include/db.inc.php");
-			require_once("include/dateTime.inc.php");
+
 
 
 			#*************************************#
@@ -209,6 +209,7 @@ if (DEBUG) 			echo "<p class='debug'><b>Line " . __LINE__ . "</b>: Logout wird d
 				// Prüfe, dass der Parameter den Wert selectCategory enthält und rufe dann die Kategorie ab.
 				if ($action == "selectCategory") {
 
+
 if (DEBUG) 			echo "<p class='debug hint'><b>Line " . __LINE__ . "</b>: URL-Parameter 'action' mit 'selectCategory' wurde übergeben. <i>(" . basename(__FILE__) . ")</i></p>\r\n";
 
 					// Verzweigung des zweiten Parameter 'id'
@@ -265,15 +266,48 @@ if (DEBUG) 		echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Die Artikel
 			#********** Blogposts in Objekte umwandeln **********#
 			#****************************************************#
 
+//
+//	if (DEBUG) echo "<pre class='debug'>Line <b>" . __LINE__ . "</b> <i>(" . basename(__FILE__) . ")</i>:<br>\r\n";
+//	if (DEBUG) print_r($postsArray);
+//	if (DEBUG) echo "</pre>";
 
+	$classArray = array();
 
 			foreach ($postsArray AS $posts) {
 
 
+				$category = new Category(
+					$posts["cat_id"],
+					$posts["cat_name"]
+				);
+
+				$user = new User(
+					$posts["usr_id"]
+				);
+
+				$user->setUsrFirstname($posts["usr_firstname"]);
+				$user->setUsrLastname($posts["usr_lastname"]);
+				$user->setUsrCity($posts["usr_city"]);
+
+				$blog = new Blog(
+					$posts["usr_id"],
+					$posts["blog_headline"],
+					$posts["blog_content"],
+					$posts["blog_date"],
+					$category,
+					$user
+				);
+
+				$blog->setBlogImagePath($posts["blog_imagePath"]);
+				$blog->setBlogImageAlignment($posts["blog_imageAlignment"]);
+
+				$classArray[] = $blog;
 
 			}
 
-
+	if (DEBUG) echo "<pre class='debug'>Line <b>" . __LINE__ . "</b> <i>(" . basename(__FILE__) . ")</i>:<br>\r\n";
+	if (DEBUG) print_r($classArray);
+	if (DEBUG) echo "</pre>";
 
 
 ?>
@@ -323,18 +357,18 @@ if (DEBUG) 		echo "<p class='debug ok'><b>Line " . __LINE__ . "</b>: Die Artikel
 			<div class="d-flex">
 				<div class="col-9">
 					<div class="content">
-						<?php if ($postsArray): ?>
-							<?php foreach ($postsArray as $singlePost): ?>
+						<?php if ($classArray): ?>
+							<?php foreach ($classArray as $singlePost): ?>
 
 								<div class="blogpost">
 									<div class="blogpost-header">
-										<small>Kategorie: <?= $singlePost["cat_name"] ?></small>
-										<h3><?= $singlePost["blog_headline"] ?></h3>
-										<span class="info"><?= $singlePost["usr_firstname"] ?> <?= $singlePost["usr_lastname"] ?> (<?= $singlePost["usr_city"] ?>) schrieb am <?= isoToEuDateTime($singlePost["blog_date"])["date"] ?> um <?= isoToEuDateTime($singlePost["blog_date"])["time"] ?> Uhr:</span>
+										<small>Kategorie: <?= $singlePost->getCategory()->getCatName() ?></small>
+										<h3><?= $singlePost->getBlogHeadline() ?></h3>
+										<span class="info"><?= $singlePost->getUser()->getUsrFirstname() ?> <?= $singlePost->getUser()->getUsrLastname() ?> (<?= $singlePost->getUser()->getUsrCity() ?>) schrieb am <?= isoToEuDateTime($singlePost->getBlogDate())["date"] ?> um <?= isoToEuDateTime($singlePost->getBlogDate())["time"] ?> Uhr:</span>
 									</div>
 									<div class="blogpost-content">
 										<div class="d-flex">
-											<?php if ($singlePost["blog_imagePath"]): ?>
+											<?php if ($singlePost->getBlogImagePath()): ?>
 												<div class="col-4 image <?= $singlePost["blog_imageAlignment"] ?>">
 													<img src="<?= $singlePost["blog_imagePath"] ?>">
 												</div>
